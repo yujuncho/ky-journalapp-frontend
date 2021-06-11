@@ -1,0 +1,8 @@
+.templateList {
+  padding: 0;
+}
+
+.templateList li {
+  list-style: none;
+  margin-bottom: 0.35rem;
+}
