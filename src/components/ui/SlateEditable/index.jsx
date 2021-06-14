@@ -10,7 +10,7 @@ function SlateEditable(props) {
   let [entryTitle, setEntryTitle] = useState([
     {
       type: "header",
-      children: [{ text: "" }]
+      children: [{ text: props.title }]
     }
   ]);
 
@@ -22,7 +22,7 @@ function SlateEditable(props) {
   const [entryBody, setEntryBody] = useState([
     {
       type: "paragraph",
-      children: [{ text: "" }]
+      children: [{ text: props.body }]
     }
   ]);
 

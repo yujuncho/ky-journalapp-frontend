@@ -1,13 +1,26 @@
-import Header from "./components/layout/Header";
-import JournalEntry from "./components/journal/JournalEntry";
+import { Switch, Route, Redirect } from "react-router-dom";
 
-import styles from "./App.module.css";
+import Header from "./components/layout/Header";
+import JournalEntry from "./pages/JournalEntry";
+import TemplateEntry from "./pages/TemplateEntry";
+
+import styles from "./App.css";
 
 function App() {
   return (
     <div className={styles.app}>
       <Header />
-      <JournalEntry />
+      <Switch>
+        <Route path="/" exact>
+          <Redirect to="/journal" />
+        </Route>
+        <Route path="/journal">
+          <JournalEntry />
+        </Route>
+        <Route path="/template/:templateId">
+          <TemplateEntry />
+        </Route>
+      </Switch>
     </div>
   );
 }

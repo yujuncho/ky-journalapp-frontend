@@ -16,7 +16,7 @@ export const renderElement = props => {
 };
 
 export const renderPlaceholder = ({ children, attributes }) => (
-  <div {...attributes}>
+  <span {...attributes}>
     <span>{children}</span>
-  </div>
+  </span>
 );

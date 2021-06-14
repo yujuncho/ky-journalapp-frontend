@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 
 import Button from "../../ui/Button";
 
@@ -13,10 +14,18 @@ function TemplateList(props) {
   return (
     <Fragment>
       <ul className={styles.templateList}>
-        <li>Gratitudes</li>
-        <li>Challenging Moments</li>
-        <li>Processing Emotions</li>
-        <li>Retrospection</li>
+        <li>
+          <Link to="/template/t1">Gratitudes</Link>
+        </li>
+        <li>
+          <Link to="/template/t2">Challenging Moments</Link>
+        </li>
+        <li>
+          <Link to="/template/t3">Processing Emotions</Link>
+        </li>
+        <li>
+          <Link to="/template/t4">Retrospective</Link>
+        </li>
       </ul>
       <Button onClick={createTemplateHandler}>+ Create New Template</Button>
     </Fragment>
