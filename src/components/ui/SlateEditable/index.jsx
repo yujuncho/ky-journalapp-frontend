@@ -3,6 +3,7 @@ import { createEditor } from "slate";
 import { Slate, Editable, withReact } from "slate-react";
 
 import { renderElement, renderPlaceholder } from "./renderer";
+import styles from "./index.module.css";
 
 // TODO: Split functionality such that the SlateEditable either returns a title or body
 function SlateEditable(props) {
@@ -41,6 +42,7 @@ function SlateEditable(props) {
         onChange={titleChangeHandler}
       >
         <Editable
+          className={styles.header}
           renderElement={renderElement}
           placeholder="Title"
           renderPlaceholder={renderPlaceholder}
@@ -52,6 +54,7 @@ function SlateEditable(props) {
         onChange={bodyChangeHandler}
       >
         <Editable
+          className={styles.body}
           renderElement={renderElement}
           placeholder="Type something"
           renderPlaceholder={renderPlaceholder}

@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import Entry from "../../components/layout/Entry";
+import Entry from "../../components/journal/Entry";
 
 // import styles from "./index.module.css";
 const MOCK_TEMPLATES = [
@@ -29,13 +29,11 @@ function TemplateEntry(props) {
   const params = useParams();
 
   let template;
-  if (params.templateId) {
+  if (params.templateId && params.templateId !== "new") {
     template = MOCK_TEMPLATES.find(item => item.id === params.templateId);
   } else {
     template = { title: "", body: "" };
   }
-
-  console.log(template);
 
   return <Entry title={template.title} body={template.body} />;
 }

@@ -1,12 +1,13 @@
+import { Fragment } from "react";
+
 import SlateEditable from "../../ui/SlateEditable";
-import Container from "../Container";
 
 function Entry(props) {
   return (
-    <Container>
+    <Fragment>
       <SlateEditable title={props.title} body={props.body} />
       {props.children}
-    </Container>
+    </Fragment>
   );
 }
 

@@ -1,17 +1,11 @@
-.templateList {
-  padding: 0;
-}
-
-.templateList li {
-  list-style: none;
-}
-
 .templateList a {
   display: block;
   width: 100%;
   padding: 0.35rem 0.2rem;
 }
 
-.templateList a:hover {
+.templateList a:hover,
+.templateList a:focus {
   background-color: lightgrey;
+  outline: 0;
 }

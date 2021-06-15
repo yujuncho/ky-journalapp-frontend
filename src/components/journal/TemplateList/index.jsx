@@ -1,16 +1,9 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 
-import Button from "../../ui/Button";
-
 import styles from "./index.module.css";
 
 function TemplateList(props) {
-  let createTemplateHandler = event => {
-    event.preventDefault();
-    alert("Create Template!");
-  };
-
   return (
     <Fragment>
       <ul className={styles.templateList}>
@@ -26,8 +19,10 @@ function TemplateList(props) {
         <li>
           <Link to="/template/t4">Retrospective</Link>
         </li>
+        <li>
+          <Link to="/template/new">+ New Template</Link>
+        </li>
       </ul>
-      <Button onClick={createTemplateHandler}>+ Create New Template</Button>
     </Fragment>
   );
 }
