@@ -1,0 +1,10 @@
+.list-item {
+  margin-bottom: 1.75rem;
+}
+
+.list-item__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}

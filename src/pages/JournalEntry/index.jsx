@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 
 import Entry from "../../components/journal/Entry";
@@ -27,6 +28,7 @@ const MOCK_ENTRIES = [
 ];
 
 function JournalEntry(props) {
+  const [isBodyEmpty, setIsBodyEmpty] = useState(true);
   const params = useParams();
 
   let template;
@@ -37,8 +39,12 @@ function JournalEntry(props) {
   }
 
   return (
-    <Entry title={template.title} body={template.body}>
-      {template.title.length === 0 && <TemplateList />}
+    <Entry
+      title={template.title}
+      body={template.body}
+      onBodyChange={isEmpty => setIsBodyEmpty(isEmpty)}
+    >
+      {template.title.length === 0 && isBodyEmpty && <TemplateList />}
     </Entry>
   );
 }

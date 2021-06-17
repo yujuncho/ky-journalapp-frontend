@@ -1,7 +1,9 @@
 .header {
   margin-bottom: 1rem;
+  padding: 0rem 0.2rem;
 }
 
 .body {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  padding: 0rem 0.2rem;
 }

@@ -1,18 +1,7 @@
-import { useRouteMatch, Link } from "react-router-dom";
+import ListItem from "../../ui/ListItem";
 
-import styles from "./index.module.css";
-
-function EntryListItem(props) {
-  const routeMatch = useRouteMatch();
-
-  return (
-    <li className={styles.entryListItem}>
-      <Link to={`${routeMatch.url}/${props.id}`}>
-        <h2>{props.title}</h2>
-        <p>{props.body}</p>
-      </Link>
-    </li>
-  );
+function EntryListItem({ id, title, body }) {
+  return <ListItem path={id} title={title} body={body} />;
 }
 
 export default EntryListItem;

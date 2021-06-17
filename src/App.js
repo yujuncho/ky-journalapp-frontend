@@ -2,6 +2,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 
 import Header from "./components/layout/Header";
 import EntryList from "./pages/EntryList";
+import DayList from "./pages/DayList";
 import JournalEntry from "./pages/JournalEntry";
 import TemplateEntry from "./pages/TemplateEntry";
 import Main from "./components/layout/Main";
@@ -15,7 +16,10 @@ function App() {
       <Main>
         <Switch>
           <Route path="/" exact>
-            <Redirect to="/journal/date" />
+            <Redirect to="/journal" />
+          </Route>
+          <Route path="/journal" exact>
+            <DayList />
           </Route>
           <Route path="/journal/:date" exact>
             <EntryList />

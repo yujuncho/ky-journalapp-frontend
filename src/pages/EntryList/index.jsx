@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { useHistory, useRouteMatch } from "react-router-dom";
+import { useHistory, useRouteMatch, useParams } from "react-router-dom";
 
 import EntryListItem from "../../components/journal/EntryListItem";
 import MainHeader from "../../components/layout/MainHeader";
@@ -30,6 +30,18 @@ const MOCK_ENTRIES = [
 function EntryList() {
   const routeMatch = useRouteMatch();
   const history = useHistory();
+  const { date } = useParams();
+
+  const formattedDate = new Date(
+    date.substring(0, 4),
+    date.substring(4, 6),
+    date.substring(6)
+  ).toLocaleDateString(undefined, {
+    weekday: "short",
+    month: "short",
+    year: "numeric",
+    day: "numeric"
+  });
 
   const newEntryHandler = event => {
     event.preventDefault();
@@ -49,7 +61,7 @@ function EntryList() {
 
   return (
     <Fragment>
-      <MainHeader title="Day">
+      <MainHeader title={formattedDate}>
         <button type="button" onClick={newEntryHandler}>
           + New
         </button>
